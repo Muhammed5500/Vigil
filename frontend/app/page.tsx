@@ -8,6 +8,7 @@ import StakeChart from "./components/StakeChart";
 import TransactionLog from "./components/TransactionLog";
 import RoundDetail from "./components/RoundDetail";
 import DrawDigit from "./components/DrawDigit";
+import VigilLogo from "./components/VigilLogo";
 
 const INITIAL_STAKE = 1.0; // 1 MON
 const NODE_IDS = ["node_A", "node_B", "node_C", "node_D"];
@@ -78,9 +79,12 @@ export default function Home() {
     <main className="max-w-6xl mx-auto px-4 py-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Vigil</h1>
-          <p className="text-sm text-[#888]">Peer Prediction for Decentralized AI Training</p>
+        <div className="flex items-center gap-3">
+          <VigilLogo size={42} />
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight">Vigil</h1>
+            <p className="text-sm text-[#888]">Peer Prediction for Decentralized AI Training</p>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           {status && status.current_round > 0 && (
