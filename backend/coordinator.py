@@ -29,10 +29,10 @@ class TrainingCoordinator:
         }
 
         self.node_addresses = {
-            "node_A": os.getenv("ADDRESS_NODE_A", "0x" + "A" * 40),
-            "node_B": os.getenv("ADDRESS_NODE_B", "0x" + "B" * 40),
-            "node_C": os.getenv("ADDRESS_NODE_C", "0x" + "C" * 40),
-            "node_D": os.getenv("ADDRESS_NODE_D", "0x" + "D" * 40),
+            "node_A": os.getenv("ADDRESS_NODE_A"),
+            "node_B": os.getenv("ADDRESS_NODE_B"),
+            "node_C": os.getenv("ADDRESS_NODE_C"),
+            "node_D": os.getenv("ADDRESS_NODE_D"),
         }
 
         self.round_history = []
@@ -73,8 +73,8 @@ class TrainingCoordinator:
         # 3. Peer prediction scoring
         pp_result = self.pp_engine.compute_scores(shared_gradients)
 
-        # 4. On-chain settlement (if connected)
-        tx_hash = "0x" + "0" * 64  # placeholder
+        # 4. On-chain settlement
+        tx_hash = None
         if self.use_chain:
             try:
                 addresses = [self.node_addresses[nid] for nid in self.nodes.keys()]
@@ -83,7 +83,7 @@ class TrainingCoordinator:
                 ]
                 tx_hash = self.chain.submit_scores(addresses, scores_fixed)
             except Exception as e:
-                print(f"Chain submission failed: {e}")
+                print(f"[Round {self.current_round}] Chain submission failed: {e}")
 
         # 5. Update model with honest gradients only
         honest_gradients = []

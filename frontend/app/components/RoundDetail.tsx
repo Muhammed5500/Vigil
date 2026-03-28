@@ -100,14 +100,18 @@ export default function RoundDetail({ round, onClose }: RoundDetailProps) {
         {/* TX Hash */}
         <div className="text-xs">
           <span className="text-[#888]">TX: </span>
-          <a
-            href={`${explorerUrl}/tx/${round.tx_hash}`}
-            target="_blank"
-            rel="noreferrer"
-            className="text-blue-400 hover:underline font-mono"
-          >
-            {round.tx_hash.slice(0, 10)}...{round.tx_hash.slice(-8)}
-          </a>
+          {round.tx_hash ? (
+            <a
+              href={`${explorerUrl}/tx/0x${round.tx_hash}`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-400 hover:underline font-mono"
+            >
+              {round.tx_hash.slice(0, 10)}...{round.tx_hash.slice(-8)}
+            </a>
+          ) : (
+            <span className="text-[#555] font-mono">no transaction</span>
+          )}
         </div>
       </div>
     </div>

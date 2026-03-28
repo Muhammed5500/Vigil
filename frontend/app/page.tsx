@@ -128,6 +128,20 @@ export default function Home() {
         </div>
       )}
 
+      {/* Training Complete Banner */}
+      {isDone && (
+        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-center">
+          <h2 className="text-xl font-bold text-green-400 mb-2">Training Complete</h2>
+          <p className="text-sm text-[#888]">
+            {status?.total_rounds} rounds completed. Final accuracy:{" "}
+            <span className="text-white font-bold">
+              {status?.round_history?.[status.round_history.length - 1]?.accuracy}%
+            </span>
+            . Cheater detected and slashed every round. Draw a digit below to test the model.
+          </p>
+        </div>
+      )}
+
       {/* Node Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
         {NODE_IDS.map((nid) => (

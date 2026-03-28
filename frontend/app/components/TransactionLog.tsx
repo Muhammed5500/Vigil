@@ -26,14 +26,18 @@ export default function TransactionLog({ transactions }: TransactionLogProps) {
             return (
               <div key={tx.round} className="flex items-center justify-between text-xs">
                 <span className="text-[#888]">Round {tx.round}</span>
-                <a
-                  href={`${explorerUrl}/tx/${tx.tx_hash}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-blue-400 hover:underline font-mono"
-                >
-                  {tx.tx_hash.slice(0, 8)}...{tx.tx_hash.slice(-6)}
-                </a>
+                {tx.tx_hash ? (
+                  <a
+                    href={`${explorerUrl}/tx/0x${tx.tx_hash}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-400 hover:underline font-mono"
+                  >
+                    {tx.tx_hash.slice(0, 8)}...{tx.tx_hash.slice(-6)}
+                  </a>
+                ) : (
+                  <span className="text-[#555] font-mono">pending</span>
+                )}
                 <span className={slashCount > 0 ? "text-red-400" : "text-green-400"}>
                   {slashCount > 0 ? `${slashCount} slashed` : "all rewarded"}
                 </span>
