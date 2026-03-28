@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+web3
+numpy
+python-dotenv
+pydantic
+Pillow
+six
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
