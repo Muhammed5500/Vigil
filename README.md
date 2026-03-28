@@ -259,9 +259,9 @@ Result:  With N >> 1, a single node's 5% bias has negligible effect on the
 
 | Contract | Address |
 |----------|---------|
-| NodeRegistry | `0x7B2407E9b7038e849bF4624b0471596674856938` |
-| StakeVault | `0xCf09F677Dccf16AFD4ccfe8696E4f3edD354Cd97` |
-| ScoringEngine | `0x69943AE8dCe775D41C33cBE9CaCBDa6d1fDbf0E7` |
+| NodeRegistry | `0x2d730e433dd426942D14218eEcBde5c703594aaF` |
+| StakeVault | `0xc8C53841625c16627FDBD783cebC900e049251dC` |
+| ScoringEngine | `0x205cAbC40Da11bDC52764F38060CC1074294775d` |
 
 ---
 
