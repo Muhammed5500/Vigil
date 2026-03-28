@@ -79,8 +79,8 @@ export default function Home() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">PeerTrain</h1>
-          <p className="text-sm text-[#888]">Decentralized AI Training Verification</p>
+          <h1 className="text-2xl font-bold tracking-tight">Vigil</h1>
+          <p className="text-sm text-[#888]">Peer Prediction for Decentralized AI Training</p>
         </div>
         <div className="flex items-center gap-3">
           {status && status.current_round > 0 && (

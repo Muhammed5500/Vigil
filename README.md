@@ -1,8 +1,8 @@
-# PeerTrain
+# Vigil
 
 **Decentralized AI training verification protocol using peer prediction mechanisms on Monad.**
 
-PeerTrain is the first known implementation that applies peer prediction — a family of mechanisms from the information elicitation literature — to AI training gradient verification. It enables permissionless, hardware-independent, and mathematically guaranteed verification of compute contributions in decentralized machine learning.
+Vigil is the first known implementation that applies peer prediction — a family of mechanisms from the information elicitation literature — to AI training gradient verification. It enables permissionless, hardware-independent, and mathematically guaranteed verification of compute contributions in decentralized machine learning.
 
 ---
 
@@ -26,11 +26,11 @@ Without verification, a single malicious node can compromise the entire training
 | **Zero-Knowledge Proofs** | Cryptographic proof of correct computation | Computationally prohibitive for gradient computation at scale, impractical latency |
 | **Redundant Computation** | Multiple nodes compute the same task | 2x-3x cost overhead, defeats the purpose of distributed training |
 
-**PeerTrain fills the gap:** no specialized hardware, no trusted validators, no oracle dependency, permissionless participation, and mathematically guaranteed honesty incentives — all at marginal computational overhead.
+**Vigil fills the gap:** no specialized hardware, no trusted validators, no oracle dependency, permissionless participation, and mathematically guaranteed honesty incentives — all at marginal computational overhead.
 
 ---
 
-## The PeerTrain Solution
+## The Vigil Solution
 
 ### Core Insight
 
@@ -51,7 +51,7 @@ This maps directly to AI training verification:
 
 ### Academic Foundation
 
-PeerTrain builds on established mechanisms from the information elicitation without verification (IEWV) literature:
+Vigil builds on established mechanisms from the information elicitation without verification (IEWV) literature:
 
 | Mechanism | Authors | Year | Key Contribution |
 |-----------|---------|------|------------------|
@@ -65,7 +65,7 @@ PeerTrain builds on established mechanisms from the information elicitation with
 - `"peer prediction" + "AI training"` — no results
 - Related but distinct: arXiv:2406.01794 (peer prediction for blockchain verifier's dilemma, not AI training), arXiv:2208.04433 (peer prediction for learning agents, not training verification)
 
-PeerTrain represents a novel intersection of mechanism design and decentralized machine learning.
+Vigil represents a novel intersection of mechanism design and decentralized machine learning.
 
 ---
 
@@ -283,7 +283,7 @@ Result:  With N >> 1, a single node's 5% bias has negligible effect on the
 
 ## Why Monad?
 
-PeerTrain requires on-chain settlement every training round — score submission, stake updates, and event emission for `N` nodes. This demands:
+Vigil requires on-chain settlement every training round — score submission, stake updates, and event emission for `N` nodes. This demands:
 
 - **High throughput:** `N` transactions per round (Monad: 10,000 TPS vs Ethereum: ~15 TPS)
 - **Low latency:** Training cannot wait minutes for finality (Monad: ~1s vs Ethereum: ~12 min)
@@ -305,8 +305,8 @@ Monad's parallel EVM execution is particularly relevant: `N` independent `slash(
 ### Setup
 
 ```bash
-git clone https://github.com/Muhammed5500/PeerTrain.git
-cd PeerTrain
+git clone https://github.com/Muhammed5500/Vigil.git
+cd Vigil
 
 # Smart Contracts
 cd contracts
@@ -420,4 +420,4 @@ MIT
 
 ---
 
-*Built for the Monad Hackathon. PeerTrain applies peer prediction to AI training verification — no hardware requirements, no trusted validators, just math.*
+*Built for the Monad Hackathon. Vigil applies peer prediction to AI training verification — no hardware requirements, no trusted validators, just math.*

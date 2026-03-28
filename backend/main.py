@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 from coordinator import TrainingCoordinator
 
-app = FastAPI(title="PeerTrain API")
+app = FastAPI(title="Vigil API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,7 +22,7 @@ training_task = None
 
 @app.get("/")
 def root():
-    return {"status": "PeerTrain API is running"}
+    return {"status": "Vigil API is running"}
 
 
 @app.post("/start-training")
